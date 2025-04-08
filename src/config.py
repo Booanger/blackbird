@@ -18,6 +18,10 @@ USERNAME_METADATA_LIST_PATH = os.path.join(
 EMAIL_LIST_FILENAME = "email-data.json"
 EMAIL_LIST_PATH = os.path.join(os.getcwd(), LIST_DIRECTORY, EMAIL_LIST_FILENAME)
 
+# Platform URLs
+PLATFORM_URLS_FILENAME = "platform_urls.json"
+PLATFORM_URLS_PATH = os.path.join(os.getcwd(), LIST_DIRECTORY, PLATFORM_URLS_FILENAME)
+
 # Logs
 LOG_DIRECTORY = "logs"
 LOG_FILENAME = "blackbird.log"

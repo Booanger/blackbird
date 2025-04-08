@@ -16,6 +16,7 @@ from ..utils.log import logError
 from ..export.dump import dumpContent
 from ..sites.instagram import get_instagram_account_info
 from ..ner.entity_extraction import extract_data_with_ai
+from .platform_manager import PlatformURLManager
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
@@ -54,9 +55,11 @@ async def checkSite(
                         else True
                     ):
                         returnData["status"] = "FOUND"
-                        config.console.print(
-                            f"  ✔️  \[[cyan1]{site['name']}[/cyan1]] [bright_white]{response['url']}[/bright_white]"
-                        )
+                        # Use the PlatformURLManager to get the profile URL
+                        if not hasattr(config, 'platform_manager'):
+                            config.platform_manager = PlatformURLManager()
+                        profile_url = config.platform_manager.get_profile_url(site['name'], config.currentUser, response['url'])
+                        config.console.print(f"✔️  \[[cyan1]{site['name']}[/cyan1]] [bright_white]{profile_url}[/bright_white]")
 
                         if site["name"] in config.metadata_params["sites"]:
                             metadata = extractMetadata(
@@ -134,6 +137,10 @@ async def fetchResults(username, config):
 
 # Start username check and presents results to user
 def verifyUsername(username, config, sitesToSearch=None, metadata_params=None):
+    # Initialize the platform manager if it doesn't exist
+    if not hasattr(config, 'platform_manager'):
+        config.platform_manager = PlatformURLManager()
+
     if sitesToSearch is None or metadata_params is None:
         data = readList("username", config)
         sitesToSearch = data["sites"]

@@ -1,0 +1,87 @@
+{
+    "platforms": {
+        "GitHub": "https://github.com/{}",
+        "Bandcamp": "https://bandcamp.com/{}",
+        "Chess.com": "https://www.chess.com/member/{}",
+        "Codeforces": "https://codeforces.com/profile/{}",
+        "DeviantArt": "https://www.deviantart.com/{}",
+        "Disqus": "https://disqus.com/by/{}/",
+        "DockerHub": "https://hub.docker.com/u/{}",
+        "Eyeem": "https://www.eyeem.com/u/{}",
+        "GitLab": "https://gitlab.com/{}",
+        "Hacker News": "https://news.ycombinator.com/user?id={}",
+        "Hackerearth": "https://www.hackerearth.com/@{}",
+        "Imgur": "https://imgur.com/user/{}",
+        "Instructables": "https://www.instructables.com/member/{}",
+        "Keybase": "https://keybase.io/{}",
+        "Livejournal": "https://{}.livejournal.com",
+        "Patreon": "https://www.patreon.com/{}",
+        "Reddit": "https://www.reddit.com/user/{}",
+        "SoundCloud": "https://soundcloud.com/{}",
+        "Spotify": "https://open.spotify.com/user/{}",
+        "Steam": "https://steamcommunity.com/user/{}",
+        "Telegram": "https://t.me/{}",
+        "TikTok": "https://www.tiktok.com/@{}",
+        "Tumblr": "https://{}.tumblr.com",
+        "Trello": "https://trello.com/u/{}",
+        "Twitch": "https://www.twitch.tv/{}",
+        "Twitter": "https://twitter.com/{}",
+        "X": "https://x.com/{}",
+        "Vimeo": "https://vimeo.com/{}",
+        "YouTube": "https://www.youtube.com/{}",
+        "About.me": "https://about.me/{}",
+        "Academia.edu": "https://independent.academia.edu/{}",
+        "AngelList": "https://angel.co/{}",
+        "Behance": "https://www.behance.net/{}",
+        "Bitbucket": "https://bitbucket.org/{}",
+        "Blogger": "https://{}.blogspot.com",
+        "Codepen": "https://codepen.io/{}",
+        "Dribbble": "https://dribbble.com/{}",
+        "Etsy": "https://www.etsy.com/shop/{}",
+        "Facebook": "https://www.facebook.com/{}",
+        "Flickr": "https://www.flickr.com/people/{}",
+        "Freelancer": "https://www.freelancer.com/u/{}",
+        "Goodreads": "https://www.goodreads.com/user/show/{}",
+        "Instagram": "https://www.instagram.com/{}",
+        "Last.fm": "https://www.last.fm/user/{}",
+        "LinkedIn": "https://www.linkedin.com/in/{}",
+        "Medium": "https://medium.com/@{}",
+        "Pinterest": "https://www.pinterest.com/{}",
+        "Product Hunt": "https://www.producthunt.com/@{}",
+        "Quora": "https://www.quora.com/profile/{}",
+        "ResearchGate": "https://www.researchgate.net/profile/{}",
+        "Snapchat": "https://www.snapchat.com/add/{}",
+        "TripAdvisor": "https://www.tripadvisor.com/members/{}",
+        "VK": "https://vk.com/{}",
+        "Wikipedia": "https://en.wikipedia.org/wiki/User:{}",
+        "Duolingo": "https://www.duolingo.com/profile/{}",
+        "smule": "https://www.smule.com/{}",
+        "TryHackMe": "https://tryhackme.com/p/{}",
+        "Hackerrank": "https://www.hackerrank.com/{}",
+        "lichess.org": "https://lichess.org/@/{}"
+    },
+    "categories": {
+        "social": [
+            "Facebook", "Twitter", "X", "Instagram", "LinkedIn", "Pinterest",
+            "Snapchat", "TikTok", "Reddit", "Tumblr", "VK"
+        ],
+        "professional": [
+            "LinkedIn", "GitHub", "GitLab", "Bitbucket", "DockerHub",
+            "Behance", "Dribbble", "Freelancer", "AngelList", "Product Hunt"
+        ],
+        "creative": [
+            "DeviantArt", "Behance", "Dribbble", "SoundCloud", "Bandcamp",
+            "YouTube", "Vimeo", "Flickr", "Etsy", "Medium"
+        ],
+        "gaming": [
+            "Steam", "Twitch", "Chess.com", "lichess.org", "TryHackMe"
+        ],
+        "tech": [
+            "GitHub", "GitLab", "Bitbucket", "DockerHub", "Codeforces",
+            "Hackerrank", "Hackerearth", "Hacker News", "Codepen"
+        ],
+        "education": [
+            "Academia.edu", "ResearchGate", "Duolingo", "Quora"
+        ]
+    }
+}
