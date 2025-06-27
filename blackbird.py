@@ -15,6 +15,7 @@ from modules.utils.userAgent import getRandomUserAgent
 from modules.export.file_operations import createSaveDirectory
 from modules.export.csv import saveToCsv
 from modules.export.pdf import saveToPdf
+from modules.export.json import saveToJson
 from modules.utils.file_operations import isFile, getLinesFromFile
 from modules.utils.permute import Permute
 from modules.ner.entity_extraction import inialize_nlp_model
@@ -70,29 +71,32 @@ def initiate():
     )
     parser.add_argument(
         "--csv",
-        default=False,
-        action=argparse.BooleanOptionalAction,
-        help="Generate a CSV with the results.",
+        action="store_true",
+        help="Generate a CSV with the results."
     )
+
     parser.add_argument(
         "--pdf",
-        default=False,
-        action=argparse.BooleanOptionalAction,
-        help="Generate a PDF with the results.",
+        action="store_true",
+        help="Generate a PDF with the results."
     )
+
     parser.add_argument(
-        "-v",
-        "--verbose",
-        default=False,
-        action=argparse.BooleanOptionalAction,
-        help="Show verbose output.",
+        "--json",
+        action="store_true",
+        help="Generate a JSON with the results."
     )
+
     parser.add_argument(
-        "-ai",
-        "--ai",
-        default=False,
-        action=argparse.BooleanOptionalAction,
-        help="Extract Metadata with AI.",
+        "-v", "--verbose",
+        action="store_true",
+        help="Show verbose output."
+    )
+
+    parser.add_argument(
+        "-ai", "--ai",
+        action="store_true",
+        help="Extract Metadata with AI."
     )
     parser.add_argument(
         "--filter",
@@ -132,6 +136,7 @@ def initiate():
     config.permuteall = args.permuteall
     config.csv = args.csv
     config.pdf = args.pdf
+    config.json = args.json
     config.filter = args.filter
     config.no_nsfw = args.no_nsfw
     config.dump = args.dump
@@ -233,13 +238,15 @@ if __name__ == "__main__":
             )
         for user in config.username:
             config.currentUser = user
-            if config.dump or config.csv or config.pdf:
+            if config.dump or config.csv or config.pdf or config.json:
                 createSaveDirectory(config)
             verifyUsername(config.currentUser, config)
             if config.csv and config.usernameFoundAccounts:
                 saveToCsv(config.usernameFoundAccounts, config)
             if config.pdf and config.usernameFoundAccounts:
                 saveToPdf(config.usernameFoundAccounts, "username", config)
+            if config.json and config.usernameFoundAccounts:
+                saveToJson(config.usernameFoundAccounts, config)
             config.currentUser = None
             config.usernameFoundAccounts = None
 
@@ -256,12 +263,14 @@ if __name__ == "__main__":
     if config.email:
         for email in config.email:
             config.currentEmail = email
-            if config.dump or config.csv or config.pdf:
+            if config.dump or config.csv or config.pdf or config.json:
                 createSaveDirectory(config)
             verifyEmail(email, config)
             if config.csv and config.emailFoundAccounts:
                 saveToCsv(config.emailFoundAccounts, config)
             if config.pdf and config.emailFoundAccounts:
                 saveToPdf(config.emailFoundAccounts, "email", config)
+            if config.json and config.emailFoundAccounts:
+                saveToJson(config.emailFoundAccounts, config)
             config.currentEmail = None
             config.emailFoundAccounts = None
